@@ -1,0 +1,5 @@
+I need to
+TODO: DO THE SHOPPING CART!!!!
+TODO: DO CONTACT PAGE
+TODO: REPORT PAGE, ATTENDENCE PAGE, EVENTS PAGE
+TODO: Add padding too the bottom of the profile pages so they are not so cut off towards the end

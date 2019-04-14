@@ -1,0 +1,399 @@
+body {
+  margin: 0;
+}
+
+body.toggled {
+  overflow: hidden;
+}
+
+/* SIDENAV CSS */
+#sidenav {
+  position: absolute;
+  width: 330px;
+  height: 100%;
+  background-color: white;
+  right: 0;
+  overflow-y: hidden;
+}
+
+#sidenav.toggled {
+  overflow-y: scroll;
+}
+
+#sidenav-wrapper {
+  width: 240px;
+  height: auto;
+  padding: 30px;
+  margin-top: 5px;
+}
+
+#sidenav-wrapper h1 {
+  margin-bottom: 24px;
+  font: 700 40px/1 'Oleo Script';
+  /*font-weight: 700;*/
+}
+
+#sidenav-wrapper a:link {
+  text-decoration: none;
+  color: black;
+  display: block;
+  line-height: 1.55;
+  margin-bottom: 10px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #333
+}
+
+#sidenav-wrapper a:visited {
+  text-decoration: none;
+  color: #333;
+}
+
+#sidenav-wrapper a:hover {
+  color: black;
+}
+
+#sidenav-wrapper hr {
+  border: 1px solid black;
+  color: black;
+}
+
+/* header CSS */
+header {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  /*margin-bottom: 200px;*/
+  padding-bottom: 150px;
+  -webkit-transition: all 300ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+  -moz-transition: all 300ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+  -o-transition: all 300ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+  transition: all 300ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+  z-index: 100;
+  overflow: hidden;
+}
+
+header.toggled {
+  background-attachment: absolute;
+  left: -330px;
+}
+
+.header-bg {
+  position: absolute;
+  width: 100%;
+  height: 150%;
+  background-image: url('../img/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+/* NAV CSS*/
+nav {
+  position: absolute;
+  width: 100%;
+  height: 150px;
+  top: 0;
+  text-align: center;
+}
+
+nav a:first-child:link {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:first-child:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:first-child img {
+  position: red;
+  display: inline-block;
+  width: 200px;
+  height: 180px;
+  margin-top: 20px;
+}
+
+#slide-toggle:link {
+  position: absolute;
+  right: 30px;
+  top: 55px;
+  font-size: 40px;
+  color: white;
+  text-decoration: none;
+}
+
+#slide-toggle:visited {
+  color: white;
+  text-decoration: none;
+}
+
+#slide-close:link {
+  position: absolute;
+  right: 30px;
+  top: 55px;
+  font-size: 40px;
+  color: black;
+  text-decoration: none;
+}
+
+#slide-toggle:visited {
+  color: black;
+  text-decoration: none;
+}
+
+/*Login Container*/
+.container {
+  position: relative;
+  width: 500px;
+  height: 390px;
+  top: 250px;
+  margin: 0 auto;
+  border-radius: 25px;
+  text-align: center;
+}
+
+#lock:link {
+  position: absolute;
+  top: 0;
+  right: 43.5%;
+  font-size: 100px;
+  color: white;
+  text-decoration: none;
+}
+
+#lock:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.form {
+  position: relative;
+  z-index: 200;
+  background: rgba(41, 128, 185, 0.8);
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+}
+
+.form-input {
+  padding: 12px
+}
+
+input[type=text] {
+  width: 80%;
+  height: 10px;
+  padding: 12px 20px;
+  border: 2px solid #ccc;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+}
+
+input[type=password] {
+  width: 80%;
+  height: 10px;
+  padding: 12px 20px;
+  border: 2px solid #ccc;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+}
+
+input[type=email] {
+  width: 80%;
+  height: 10px;
+  padding: 12px 20px;
+  border: 2px solid #ccc;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+}
+
+input[type=submit] {
+  background-color: white;
+  border: 2px solid #ccc;
+  color: black;
+  padding: 16px 20px;
+  text-decoration: none;
+  width: 89%;
+  margin: 17px 2px 7px;
+  cursor: pointer;
+  font-size: 17px;
+  font-family: 'Raleway', sans-serif;
+}
+
+input[type=submit]:hover {
+  background-color: #3498db;
+}
+
+.message a:link {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 25px;
+  font-family: 'Oleo Script', cursive;
+}
+
+.message a:visited {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.message {
+  border: 3px solid white;
+  padding: 10px 0;
+  color: white;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.forgotPass a:link {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 25px;
+  font-family: 'Oleo Script', cursive;
+}
+
+.forgotPass a:visited {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.forgotPass {
+  border: 3px solid white;
+  padding: 5px 20px;
+  color: white;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.error {
+  position: relative;
+  color: black;
+  font-family: Raleway;
+  background: rgba(215, 0, 0, 0.9);
+  border-radius: 3px;
+  border: 3px solid #AA0000;
+}
+
+.verify {
+  position: relative;
+  color: black;
+  font-family: Raleway;
+  background: rgba(76, 187, 23, 0.8);
+  border-radius: 3px;
+  border: 3px solid rgba(11, 102, 35, .9);
+}
+
+.alert {
+  position: relative;
+  color: black;
+  font-family: Raleway;
+  background: rgba(215, 0, 0, 0.9);
+  border-radius: 3px;
+  border: 3px solid #AA0000;
+}
+
+.alert:empty {
+  display: none;
+}
+
+.form .registration-form {
+  display: none;
+}
+
+.form-holder {
+  top: 23px;
+  position: fixed;
+  width: 500px;
+  height: 54vh;
+  display: flex;
+  justify-content: center;
+  border-radius: 4px;
+  margin: 0 auto;
+  z-index: 200;
+  left: 70%;
+  margin-left: -37.5%
+}
+
+/* This is the Pre Loader */
+.spinner-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  z-index: 999999;
+}
+
+.spinner {
+  position: absolute;
+  top: 48%;
+  left: 48%;
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.spinner>div {
+  background-color: white;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes sk-stretchdelay {
+  0%, 40%, 100% {
+    -webkit-transform: scaleY(0.4)
+  }
+
+  20% {
+    -webkit-transform: scaleY(1.0)
+  }
+}
+
+@keyframes sk-stretchdelay {
+  0%, 40%, 100% {
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }
+
+  20% {
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}

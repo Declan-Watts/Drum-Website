@@ -1,0 +1,795 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+body.toggled {
+  overflow: hidden;
+}
+
+/* SIDENAV CSS */
+#sidenav {
+  position: absolute;
+  width: 330px;
+  height: 100%;
+  background-color: white;
+  right: 0;
+  overflow-y: hidden;
+}
+
+#sidenav.toggled {
+  overflow-y: scroll;
+}
+
+#sidenav-wrapper {
+  width: 240px;
+  height: auto;
+  padding: 30px;
+  margin-top: 5px;
+}
+
+#sidenav-wrapper h1 {
+  margin-bottom: 24px;
+  font: 700 40px/1 'Oleo Script';
+  /*font-weight: 700;*/
+}
+
+#sidenav-wrapper a:link {
+  text-decoration: none;
+  color: black;
+  display: block;
+  line-height: 1.55;
+  margin-bottom: 10px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #333
+}
+
+#sidenav-wrapper a:visited {
+  text-decoration: none;
+  color: #333;
+}
+
+#sidenav-wrapper a:hover {
+  color: black;
+}
+
+#sidenav-wrapper hr {
+  border: 1px solid black;
+  color: black;
+}
+
+/* header CSS */
+header {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  /*margin-bottom: 200px;*/
+  padding-bottom: 150px;
+  -webkit-transition: all 300ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+  -moz-transition: all 300ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+  -o-transition: all 300ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+  transition: all 300ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+  z-index: 100;
+  overflow: hidden;
+}
+
+header.toggled {
+  background-attachment: absolute;
+  left: -330px;
+}
+
+.header-bg {
+  position: absolute;
+  width: 100%;
+  height: 150%;
+  background-image: url('../img/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+/* NAV CSS*/
+nav {
+  position: absolute;
+  width: 100%;
+  height: 150px;
+  top: 0;
+  text-align: center;
+}
+
+nav a:first-child:link {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:first-child:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:first-child img {
+  position: red;
+  display: inline-block;
+  width: 200px;
+  height: 180px;
+  margin-top: 20px;
+}
+
+#slide-toggle:link {
+  position: absolute;
+  right: 30px;
+  top: 55px;
+  font-size: 40px;
+  color: white;
+  text-decoration: none;
+}
+
+#slide-toggle:visited {
+  color: white;
+  text-decoration: none;
+}
+
+#slide-close:link {
+  position: absolute;
+  right: 30px;
+  top: 55px;
+  font-size: 40px;
+  color: black;
+  text-decoration: none;
+}
+
+#form-close:link {
+  position: absolute;
+  right: 30px;
+  top: 15px;
+  font-size: 40px;
+  color: black;
+  text-decoration: none;
+}
+
+#slide-toggle:visited {
+  color: black;
+  text-decoration: none;
+}
+
+/* Motto CSS */
+.motto {
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  top: 50px;
+  font: 400 2.8vw/1.3 'Oleo Script';
+  color: #ecf0f1;
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+  border: 8px solid white;
+}
+
+.profileIMG {
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+  width: 200px;
+  height: 180px;
+  margin: 0 auto;
+  top: 250%;
+}
+
+.scrolldown {
+  text-align: center;
+  position: relative;
+  top: 80vh;
+}
+
+#scrolldownarrow1 {
+  padding: 0 200px;
+  text-decoration: none;
+  color: white;
+  font-size: 70px;
+}
+
+.scrolldown p {
+  color: white;
+  margin: 0 auto;
+  max-width: 50%;
+  font: 400 45px/1.3 'Oleo Script';
+}
+
+/* Cards CSS */
+.headings {
+  position: relative;
+  margin: 0;
+  padding: 50px;
+  background-color: white;
+  text-align: center;
+  font: 400 45px/1.3 'Oleo Script';
+  color: black;
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.formhead {
+  position: relative;
+  margin: 0;
+  padding: 10px;
+  background-color: white;
+  text-align: center;
+  font: 400 45px/1.3 'Oleo Script';
+  color: black;
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.card-window {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 75vh;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.card-windowb {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 600px;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.card {
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  height: 150%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.cardb {
+  position: absolute;
+  margin: 0;
+  width: 50%;
+  height: 150%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  left: 0;
+}
+
+.cardb2 {
+  position: absolute;
+  margin: 0;
+  width: 50%;
+  height: 150%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  right: 0;
+}
+
+.cardtxt {
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+  max-width: 600px;
+  top: 22%;
+  margin: 0 auto;
+  font: 400 45px/1.3 'Oleo Script';
+  color: #ecf0f1;
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+  border: 8px solid white;
+  text-decoration: none;
+}
+
+.cardtxtb {
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+  max-width: 500px;
+  top: 22%;
+  margin: 80px auto;
+  font: 400 45px/1.3 'Oleo Script';
+  color: #ecf0f1;
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+  border: 8px solid white;
+  text-decoration: none;
+}
+
+.cardtxtb2 {
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+  max-width: 500px;
+  top: 22%;
+  margin: 80px auto;
+  font: 400 45px/1.3 'Oleo Script';
+  color: #ecf0f1;
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+  border: 8px solid white;
+  text-decoration: none;
+}
+
+#c1 {
+  background-image: url('../img/card1.jpg');
+}
+
+#c2 {
+  background-image: url('../img/card2.jpg');
+}
+
+#c3 {
+  background-image: url('../img/card3.jpg');
+}
+
+#c4 {
+  background-image: url('../img/card4.jpg');
+}
+
+#ct {
+  text-decoration: none;
+  color: #ecf0f1;
+}
+
+#c1b {
+  background-image: url('../img/card4.jpg');
+}
+
+#c2b {
+  background-image: url('../img/card3.jpg');
+}
+
+#c3b {
+  background-image: url('../img/card1.jpg');
+}
+
+#c4b {
+  background-image: url('../img/card2.jpg');
+}
+
+#ctb {
+  text-decoration: none;
+  color: #ecf0f1;
+}
+
+/*Brief CSS*/
+.brief {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0 0 100px;
+}
+
+.brief p {
+  position: relative;
+  max-width: 75%;
+  margin: 0 auto;
+  font: 400 30px/1.3 'Oleo Script';
+  color: black;
+}
+
+.days {
+  height: 100vh;
+}
+
+.drums_day1 {
+  position: absolute;
+  height: 50vh;
+  width: 33.3%;
+  left: 0;
+}
+
+.drums_day2 {
+  position: absolute;
+  height: 50vh;
+  width: 33.3%;
+  left: 33.3%;
+}
+
+.drums_day3 {
+  position: absolute;
+  height: 50vh;
+  width: 33.3%;
+  right: 0;
+}
+
+.date_title {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  width: 70%;
+  max-width: 300px;
+  font: 400 20px/1.3 'Oleo Script';
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+  color: black;
+  text-decoration: underline;
+}
+
+.book_card {
+  position: relative;
+  width: 70%;
+  height: 100px;
+  margin: 20px auto;
+  transition: transform .2s;
+  border: 4px solid black;
+  visibility: hidden;
+  text-align: center;
+}
+
+.book_card:hover {
+  transform: scale(1.2);
+}
+
+.booklnk:link {
+  text-decoration: none;
+}
+
+.orderlnk:link {
+  text-decoration: none;
+}
+
+.applnk:link {
+  text-decoration: none;
+}
+
+.book_card p1 {
+  position: relative;
+  top: 20px;
+  padding: 10px;
+  font: 400 25px/1.3 'Oleo Script';
+  color: black;
+}
+
+.book_card p2 {
+  position: relative;
+  top: 23px;
+  font: 400 30px/1.3 'Oleo Script';
+  color: green;
+}
+
+.bg-model {
+  text-align: center;
+  z-index: 101;
+  width: 100%;
+  height: 354%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.model-content {
+  top: 20px;
+  position: fixed;
+  width: 500px;
+  height: 96vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  border-radius: 4px;
+  margin: 0 auto;
+  z-index: 1;
+  left: 70%;
+  margin-left: -37.5%
+}
+
+.model-content-inner {
+  height: 96vh;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+input[type=text], input[type=password] {
+  margin: 16px;
+  width: 80%;
+  height: 10px;
+  padding: 12px 20px;
+  border: 2px solid #ccc;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+}
+
+input[type=email] {
+  margin: 16px;
+  width: 80%;
+  height: 10px;
+  padding: 12px 20px;
+  border: 2px solid #ccc;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+}
+
+input[type=submit] {
+  background-color: white;
+  border: 2px solid #ccc;
+  color: black;
+  padding: 16px 20px;
+  text-decoration: none;
+  width: 89%;
+  margin: 17px 2px 7px;
+  cursor: pointer;
+  font-size: 17px;
+  font-family: 'Raleway', sans-serif;
+}
+
+input[type=submit]:hover {
+  background-color: grey;
+}
+
+input[type=Radio] {
+  margin: 9px;
+  font-size: 17px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.form_input {
+  padding: 0px 0px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #3498db;
+}
+
+.titles {
+  position: relative;
+  text-align: center;
+  font: 400 20px/1.3 'Oleo Script';
+}
+
+.settingsform {
+  margin: auto;
+  width: 90%;
+  text-align: center;
+}
+
+.applications {}
+
+#information {
+  position: relative;
+}
+
+.appinfo {
+  text-align: left;
+  padding: 0px 60px;
+  position: relative;
+}
+
+.appinfo p {
+  margin: 0;
+  font: 400 30px/1.3 'Oleo Script';
+  color: black;
+  max-width: 90%;
+}
+
+.appinfo h1 {
+  text-align: center;
+  color: black;
+  font: 400 40px/1.3 'Oleo Script';
+  color: black;
+  max-width: 90%;
+}
+
+/* This is the Pre Loader */
+.spinner-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  z-index: 999999;
+}
+
+.spinner {
+  position: absolute;
+  top: 48%;
+  left: 48%;
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.spinner>div {
+  background-color: white;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes sk-stretchdelay {
+  0%, 40%, 100% {
+    -webkit-transform: scaleY(0.4)
+  }
+
+  20% {
+    -webkit-transform: scaleY(1.0)
+  }
+}
+
+@keyframes sk-stretchdelay {
+  0%, 40%, 100% {
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }
+
+  20% {
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}
+
+footer {
+  text-align: center;
+  width: 100%;
+  position: relative;
+  background-color: #24282f;
+}
+
+.footer-div {
+  position: relative;
+  width: 100%;
+}
+
+#f1 {
+  height: 60px;
+}
+
+#f2 {
+  height: 120px;
+}
+
+#f3 {
+  height: 120px;
+}
+
+#f4 {
+  height: 60px;
+}
+
+.footer-pages a {
+  padding: 20px;
+  text-decoration: none;
+  line-height: 1.55;
+  margin-bottom: 10px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #ecf0f1;
+}
+
+.footer-pages a:link {
+  text-decoration: none;
+}
+
+.footer-pages {
+  padding: 10px;
+}
+
+.footer-motto p {
+  font: 400 2.8vw/.3 'Oleo Script';
+  color: #ecf0f1;
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.footer-contact {
+  padding: 10px;
+}
+
+.footer-contact a:link {
+  text-decoration: none;
+}
+
+.footer-contact a {
+  text-decoration: none;
+  padding: 20px;
+  line-height: 1.55;
+  margin-bottom: 10px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #ecf0f1;
+}
+
+.footer-logo img {
+  width: 130px;
+  height: 120px;
+  padding: 5px;
+}
+
+.product-container {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  padding: 0 0 100px;
+}
+
+.product-brief {
+  position: absolute;
+  width: 56.6%;
+  height: 50vh;
+  left: 33.4%;
+}
+
+.product-add {
+  position: absolute;
+  width: 10%;
+  height: 50vh;
+  right: 0;
+}
+
+.product-image {
+  position: absolute;
+  width: 33.3%;
+  height: 50vh;
+  left: 0;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+}
