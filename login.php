@@ -41,7 +41,7 @@ if(isset($_POST['submit'])){
     $_SESSION['login_ID']=$UID;
     $_SESSION['logged_in'] = True;
     $_SESSION['Avatar']=$avatarimg;
-    header('location: profile.php');
+    echo "<script>location='profile.php'</script>";
   }
   else {
     $error = true;

@@ -72,11 +72,11 @@ function StudentAdd($PID, $studentfn, $studentln, $studentage, $studentgender, $
 function ApplicationInsert($PID, $SID, $time, $db){
   $sql = "INSERT INTO applications (APP_ID, ParentID, StudentID, Time, Status) VALUES (NULL, $PID, $SID, '$time', 'Pending')";
   if(mysqli_query($db, $sql)){
-    header("location: Success.php");
+    echo "<script>location='success.php'</script>";
     $body = "Thank You for Sending through the Application for $time. The application is currently in the Pending Status and you will be notified when this changes.";
     Mail::sendMail('Booking Application', $body, $email);
   } else {
-    header("location: error.php");
+    echo "<script>location='error.php'</script>";
   }
 }
 

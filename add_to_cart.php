@@ -22,5 +22,5 @@ if(isset($_POST['add'])){
     }
   }
 }
-header("location: equipmenthire.php");
+echo "<script>location='equipmenthire.php'</script>";
 ?>

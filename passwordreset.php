@@ -22,11 +22,11 @@ if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !
       if(mysqli_num_rows($result)==1){
         } else {
           $_SESSION['error'] = 'Reset ';
-          header('location: error.php');
+          echo "<script>location='error.php'</script>";
         }
       } else {
         $_SESSION['error'] = 'Reset ';
-        header('location: error.php');
+        echo "<script>location='error.php'</script>";
       }
 //When the reset submit button is pressed the code underneath will run
 if(isset($_POST['resetsubmit'])){
@@ -40,7 +40,7 @@ if(isset($_POST['resetsubmit'])){
     $sql = "UPDATE loginform SET Pass = '$passh', Verifybit='Verified' WHERE Email = $email";
     //updates the passowrd and redirects the user to the login page
     if(mysqli_query($db, $sql)){
-      header('location: login.php');
+      echo "<script>location='login.php'</script>";
     } else {
       $error = True;
     }

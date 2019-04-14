@@ -36,7 +36,7 @@ if (isset($_POST['filesubmit'])) {
           $_SESSION['Avatar']=$fileDestination;
           //I redirect the user too profile.php
           if(mysqli_query($db, $sql)){
-            header('location: profile.php?success');
+            echo "<script>location='profile.php?success'</script>";
           }
         } else {
           echo "it didnt work";

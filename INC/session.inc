@@ -18,6 +18,6 @@ $login_session = $row['User'];
 
 if(!isset($login_session)){
   mysql_close($db);
-  header('Location: login.php');
+  echo "<script>location='login.php'</script>";
 }
  ?>

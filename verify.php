@@ -13,17 +13,17 @@ if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !
       if(mysqli_num_rows($result)==1){
         $sql_set_active = "UPDATE loginform SET Active = 1, Verifybit = 'Verified' WHERE loginform.Email = $email";
         if(mysqli_query($db, $sql_set_active)){
-          header('location: login.php');
+          echo "<script>location='login.php'</script>";
         } else {
           $_SESSION['error'] = 'Verification ';
-          header('location: error.php');
+          echo "<script>location='error.php'</script>";
         }
       } else {
         $_SESSION['error'] = 'Verification ';
-        header('location: error.php');
+        echo "<script>location='error.php'</script>";
       }
 } else {
   $_SESSION['error'] = 'Verification ';
-  header('location: error.php');
+  echo "<script>location='error.php'</script>";
 }
 ?>

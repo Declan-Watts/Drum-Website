@@ -26,7 +26,7 @@ if(isset($_POST['passsubmit'])){
       $passnewhash = hash('sha256', $passnew);
       $sqlPassUpdate = "UPDATE loginform SET Pass = '$passnewhash' WHERE loginform.ID = $UID ";
       if(mysqli_query($db, $sqlPassUpdate)){
-        header('location: profile.php?success');
+        echo "<script>location='profile.php?success'</script>";
       } else {
         echo "Sorry there was an issue in changing the password";
       }
