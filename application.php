@@ -46,9 +46,12 @@ $UID = $_SESSION['login_ID'];
   <hr>
   <div class="applications">
     <?php
+    //Applications Get
+    //This first gets all of the different applications ID and Status that the client's account has put through into the database.
      $sql = "SELECT app.APP_ID, app.Status FROM applications as app INNER JOIN parents on app.ParentID = parents.ParentID WHERE parents.ID = $UID";
      $result = mysqli_query($db, $sql);
      if(mysqli_num_rows($result) > 0){
+       //If there is more than one result, it will then display all of the applications as card for the user to click on, which will then use AJAX to load the information through load-app.php
        while($row = mysqli_fetch_array($result)){
          $App_ID = $row['APP_ID'];
          $App_status = $row['Status'];
@@ -82,6 +85,7 @@ $UID = $_SESSION['login_ID'];
   <hr>
   <div class="applications">
     <?php
+    //This works the same way that Applicatoins works except it does it for the users orders
      $sql = "SELECT Order_ID, Status FROM orders WHERE ID=$UID";
      $result = mysqli_query($db, $sql);
        while($row = mysqli_fetch_array($result)){

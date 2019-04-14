@@ -83,22 +83,22 @@ function ApplicationInsert($PID, $SID, $time, $db){
 //This adds a user too the database if the parent is not currently a registered parent in the database
 function UserAdd($parentfn, $parentln, $email, $phone, $db){
   echo "useradd";
-    $username = $parentfn.'.'.$parentln;
-    $pass = rand();
-    $passh = hash("sha256", $pass);
-    $random = rand();
-    $hash = hash("sha256", $random);
+    $username = $parentfn.'.'.$parentln; //Creating a username for the user
+    $pass = rand(); //generating a random number for the password
+    $passh = hash("sha256", $pass); //hashing the password
+    $random = rand(); //Creating a random number for the verification link that will be sent too the email
+    $hash = hash("sha256", $random); //hashing the verification link
     $sqluser_add = "INSERT INTO loginform (ID, User, Email, Avatar, Verifybit, Pass) VALUES (NULL, '$username', '$email', 'image/default.jpg', '$hash', '$passh')";
-    echo "$sqluser_add";
+    echo "$sqluser_add"; //Inserting the user into the databse
     if(mysqli_query($db, $sqluser_add)){
       echo "Hello2";
-        $sql_user_search = "SELECT * FROM loginform WHERE Email='$email' ";
+        $sql_user_search = "SELECT * FROM loginform WHERE Email='$email' "; //Grabing the id of the newly created user
         $result=mysqli_query($db, $sql_user_search);
         $row = mysqli_fetch_array($result);
-        $UID = $row['ID'];
-        $sql_parent_add = "INSERT INTO parents (ID, ParentID, ParentFN, ParentLN, Contact_Email, PH) VALUES ($UID, NULL, '$parentfn', '$parentln', '$email', $phone)";
+        $UID = $row['ID'];//setting the users id = $UID variable
+        $sql_parent_add = "INSERT INTO parents (ID, ParentID, ParentFN, ParentLN, Contact_Email, PH) VALUES ($UID, NULL, '$parentfn', '$parentln', '$email', $phone)"; //inserting the parent into the databse connected to the UID of the login account so they are linked.
         if(mysqli_query($db, $sql_parent_add)){
-          $unamepass = array($username, $pass, $hash);
+          $unamepass = array($username, $pass, $hash); //Creating an array too return back
           return $unamepass;
         }
       }
@@ -262,10 +262,10 @@ if(isset($_POST['submit'])){
       $counting = 0;
       foreach ($ARR_BOOK as $DATA) {
         if($DATA[0] === 'Tues'){
-          $dayarray = CardCreator($DATA);
-          $day1 = $dayarray[0];
-          $dayv1 = $dayarray[1];
-          $daya1 = $dayarray[2];
+          $dayarray = CardCreator($DATA); //This grabs all of the available tuesday times for lessons
+          $day1 = $dayarray[0]; //This gets the id for the card (Time of lesson)
+          $dayv1 = $dayarray[1]; //This sets the visibility of the card
+          $daya1 = $dayarray[2]; //This sets the availability text of the cards
           $counting += 1;
           echo "<div class='book_card' id= $day1 style='visibility: $dayv1'>";
           echo "<a class='booklnk' href='#' data-timeslot= $day1>";
@@ -276,7 +276,7 @@ if(isset($_POST['submit'])){
         }
       }
 
-      if($counting < 1){
+      if($counting < 1){ //If there is no available tuesday, it allows you too ask to be added too the waiting list
         echo "<div class='book_card' id= Tues1 style='visibility: visible'>";
         echo "<a class='booklnk' href='#' data-timeslot= WaitingT>";
         echo "<p1>None Available</p1>";
@@ -291,6 +291,7 @@ if(isset($_POST['submit'])){
         <h1>Friday<h1>
       </div>
       <?php
+      //This works the same as tuesday except for Fridays
       $counting = 0;
       foreach ($ARR_BOOK as $DATA) {
         if($DATA[0] === 'Fri'){
@@ -323,6 +324,7 @@ if(isset($_POST['submit'])){
         <h1>Saturday<h1>
       </div>
       <?php
+      //This works the same as tuesday and friday except it does it for saturday
       $counting = 0;
       foreach ($ARR_BOOK as $DATA) {
         if($DATA[0] === 'Sat'){

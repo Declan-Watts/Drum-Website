@@ -373,7 +373,6 @@ nav a:first-child img {
   z-index: 100;
   overflow: hidden;
   text-align: center;
-  vertical-align: middle;
   padding: 0 0 100px;
 }
 
@@ -583,8 +582,6 @@ li a:hover:not(.active) {
   width: 90%;
   text-align: center;
 }
-
-.applications {}
 
 #information {
   position: relative;
